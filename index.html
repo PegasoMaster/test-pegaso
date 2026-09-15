@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test Pegaso</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">TEST PEGASO</div>
+    <div class="top-actions">
+      <div id="timer">00:00</div>
+      <button id="finishBtn" class="finish-btn">TERMINA TEST</button>
+    </div>
+  </header>
+
+  <main id="home" class="home">
+    <section class="hero">
+      <div class="eyebrow">STRATEGIE ORGANIZZATIVE E DI INNOVAZIONE NELLA P.A.</div>
+      <h1>Simulatore d'esame</h1>
+      <p>1916 domande organizzate in 8 moduli e 284 capitoli.</p>
+    </section>
+
+    <section class="home-grid">
+      <button class="mode-card" id="chapterMode">
+        <span class="mode-icon">📖</span>
+        <span class="mode-title">ESERCITATI PER CAPITOLO</span>
+        <span class="mode-text">Scegli modulo e capitolo e allenati solo sugli argomenti che vuoi ripassare.</span>
+      </button>
+      <button class="mode-card exam" id="examMode">
+        <span class="mode-icon">🎯</span>
+        <span class="mode-title">SIMULAZIONE ESAME</span>
+        <span class="mode-text">30 domande casuali pescate da tutti i moduli, come un vero test.</span>
+      </button>
+    </section>
+
+    <section class="info-strip">
+      <div><strong>30</strong><span>domande esame</span></div>
+      <div><strong>18/30</strong><span>obiettivo per superare</span></div>
+      <div><strong>4</strong><span>risposte per domanda</span></div>
+    </section>
+  </main>
+
+  <main id="chapterSelect" class="select-page hidden">
+    <button class="back-link" data-back>← Torna al menu</button>
+    <h2>Scegli il modulo</h2>
+    <div id="moduleList" class="module-list"></div>
+    <div id="chapterArea" class="chapter-area hidden">
+      <h2 id="selectedModuleTitle"></h2>
+      <div id="chapterList" class="chapter-list"></div>
+    </div>
+  </main>
+
+  <main id="quiz" class="quiz-page hidden">
+    <aside class="sidebar">
+      <div class="side-title">DOMANDE</div>
+      <div id="questionNav" class="question-nav"></div>
+      <div class="score-box">
+        <span>RISULTATO ATTUALE</span>
+        <strong id="score">0 / 0</strong>
+      </div>
+    </aside>
+
+    <section class="quiz-content">
+      <div class="quiz-meta">
+        <span id="quizModeLabel">SIMULAZIONE ESAME</span>
+        <span id="progressText">Domanda 1 di 30</span>
+      </div>
+
+      <div class="question-card">
+        <div id="chapterLabel" class="chapter-label"></div>
+        <div id="questionHeader" class="question-header"></div>
+        <div id="questionText" class="question-text"></div>
+        <div id="answers" class="answers"></div>
+        <div id="feedback" class="feedback hidden"></div>
+      </div>
+
+      <div class="quiz-controls">
+        <button id="prevBtn" class="nav-btn secondary">← INDIETRO</button>
+        <button id="nextBtn" class="nav-btn primary">AVANTI →</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="resultModal" class="modal hidden">
+    <div class="modal-card">
+      <div id="resultIcon" class="result-icon">✓</div>
+      <h2 id="resultTitle"></h2>
+      <div id="resultScore" class="result-score"></div>
+      <p id="resultText"></p>
+      <div class="result-actions">
+        <button id="retryBtn" class="nav-btn primary">RIPETI</button>
+        <button id="homeBtn" class="nav-btn secondary">MENU PRINCIPALE</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
